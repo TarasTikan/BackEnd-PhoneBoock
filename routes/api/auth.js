@@ -4,7 +4,6 @@ const router = express.Router();
 const { ctrlWrapper } = require("../../helpers/index");
 const controller = require("../../controllers/auth");
 const {authTokenValid, upload} = require("../../middlewares/index");
-
 router.post("/register", ctrlWrapper(controller.registration));
 router.post("/login", ctrlWrapper(controller.login));
 router.get(
@@ -24,5 +23,7 @@ router.patch(
   ctrlWrapper(controller.updateAvatar)
 );
 
+router.get("/verify/:verificationToken", ctrlWrapper(controller.verifyEmail));
+router.post('/verify', ctrlWrapper(controller.recendVerifyEmail))
 
 module.exports = router;

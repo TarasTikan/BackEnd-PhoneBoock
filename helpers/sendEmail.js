@@ -1,15 +1,15 @@
 const nodemailer = require("nodemailer");
 require('dotenv').config()
-
+const {PASSWORD} = process.env
 const config = {
-  host: "smpt.meta.ua",
+  host: "smtp.meta.ua",
   port: 465,
   secure: true,
   auth: {
     user: "taras0123@meta.ua",
-    pass: process.env.PASSWORD
+    pass: PASSWORD,
   },
 };
-const transporter = nodemailer.createTransport(config)
+const transporter = nodemailer.createTransport(config);
 
-module.exports = transporter
+module.exports = transporter;

@@ -1,3 +1,8 @@
-const { addShema, addShemaFavorite, addShemaAuth } = require("./JoiShems");
+const {
+  addShema,
+  addShemaFavorite,
+  addShemaAuth,
+  emailShema,
+} = require("./JoiShems");
 
-module.exports = { addShema, addShemaFavorite, addShemaAuth };
+module.exports = { addShema, addShemaFavorite, addShemaAuth, emailShema };
