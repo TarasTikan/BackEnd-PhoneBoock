@@ -4,6 +4,7 @@ const router = express.Router();
 const { ctrlWrapper } = require("../../helpers/index");
 const controller = require("../../controllers/auth");
 const {authTokenValid, upload} = require("../../middlewares/index");
+
 router.post("/register", ctrlWrapper(controller.registration));
 router.post("/login", ctrlWrapper(controller.login));
 router.get(
@@ -22,4 +23,6 @@ router.patch(
   upload.single("avatar"),
   ctrlWrapper(controller.updateAvatar)
 );
+
+
 module.exports = router;
